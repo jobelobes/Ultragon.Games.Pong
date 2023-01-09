@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/actors/paddle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/actors/goal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/actors/ball.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 531.975, 10 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="UpperLimit" type="StaticBody2D" parent="."]
+position = Vector2( 0, -10 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperLimit"]
+position = Vector2( 512.025, 0 )
+shape = SubResource( 1 )
+
+[node name="LowerLimit" type="StaticBody2D" parent="."]
+position = Vector2( 0, 610 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerLimit"]
+position = Vector2( 512.025, 0 )
+shape = SubResource( 1 )
+
+[node name="Player1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 20, 100 )
+controllerType = 0
+ball = NodePath("../Ball")
+
+[node name="Player1_Goal" parent="." instance=ExtResource( 2 )]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1000, 100 )
+controllerType = 2
+ball = NodePath("../Ball")
+
+[node name="Player2_Goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1034, 0 )
+collision_layer = 2
+collision_mask = 4
+
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+position = Vector2( 494, 302 )
