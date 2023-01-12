@@ -29,7 +29,6 @@ shape = SubResource( 1 )
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 20, 100 )
-controllerType = 0
 ball = NodePath("../Ball")
 
 [node name="Player1_Goal" parent="." instance=ExtResource( 2 )]
@@ -38,8 +37,8 @@ collision_mask = 4
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1000, 100 )
-controllerType = 2
 ball = NodePath("../Ball")
+player_controller = 2
 
 [node name="Player2_Goal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1034, 0 )
