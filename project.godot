@@ -17,7 +17,17 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "ColorCircle",
 "language": "GDScript",
-"path": "res://src/general/colorcircle.gd"
+"path": "res://src/general/color_circle.gd"
+}, {
+"base": "Control",
+"class": "ColorLine",
+"language": "GDScript",
+"path": "res://src/general/color_line.gd"
+}, {
+"base": "Node2D",
+"class": "GameBoard",
+"language": "GDScript",
+"path": "res://src/scenes/game_board.gd"
 }, {
 "base": "StaticBody2D",
 "class": "Paddle",
@@ -27,14 +37,20 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Ball": "",
 "ColorCircle": "",
+"ColorLine": "",
+"GameBoard": "",
 "Paddle": ""
 }
 
 [application]
 
 config/name="Pong"
-run/main_scene="res://src/scenes/default_scene.tscn"
+run/main_scene="res://src/scenes/start.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GameState="*res://src/general/game_state.gd"
 
 [display]
 
@@ -43,6 +59,7 @@ window/size/resizable=false
 [global]
 
 clear=false
+global=false
 
 [gui]
 
