@@ -39,7 +39,7 @@ func _ai_move(delta: float):
 	self._ai_state["last_pos"] = self.ball.position
 	
 	var ball_velocity = (self.ball.position - last_position) / delta
-	if ball_velocity.x < 0: # ball moving away, sleep!
+	if ball_velocity.x <= 0: # ball moving away, sleep!
 		return 0.0
 		
 	var impact_time = abs(self.ball.position.x - self.position.x) / ball_velocity.x

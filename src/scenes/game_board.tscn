@@ -61,6 +61,8 @@ paddle = NodePath("../Player2")
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 position = Vector2( 494, 302 )
+max_speed = 10000
+min_speed = 2000
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
